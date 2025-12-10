@@ -1,0 +1,1 @@
+# Servisler paylaşılabilir class lardır
