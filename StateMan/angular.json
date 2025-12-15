@@ -1,9 +1,13 @@
 {
   "$schema": "./node_modules/@angular/cli/lib/config/schema.json",
   "version": 1,
+  "cli": {
+    "packageManager": "npm",
+    "analytics": "40c380d1-516c-4ac5-b028-786ba206d137"
+  },
   "newProjectRoot": "projects",
   "projects": {
-    "7.Service": {
+    "StateMan": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -14,9 +18,6 @@
           "builder": "@angular/build:application",
           "options": {
             "browser": "src/main.ts",
-            "polyfills": [
-              "zone.js"
-            ],
             "tsConfig": "tsconfig.app.json",
             "assets": [
               {
@@ -56,40 +57,18 @@
           "builder": "@angular/build:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "7.Service:build:production"
+              "buildTarget": "StateMan:build:production"
             },
             "development": {
-              "buildTarget": "7.Service:build:development"
+              "buildTarget": "StateMan:build:development"
             }
           },
           "defaultConfiguration": "development"
         },
-        "extract-i18n": {
-          "builder": "@angular/build:extract-i18n"
-        },
         "test": {
-          "builder": "@angular/build:karma",
-          "options": {
-            "polyfills": [
-              "zone.js",
-              "zone.js/testing"
-            ],
-            "tsConfig": "tsconfig.spec.json",
-            "assets": [
-              {
-                "glob": "**/*",
-                "input": "public"
-              }
-            ],
-            "styles": [
-              "src/styles.css"
-            ]
-          }
+          "builder": "@angular/build:unit-test"
         }
       }
     }
-  },
-  "cli": {
-    "analytics": "5803bfca-ac22-4bc5-bf8b-e82b34f8c99b"
   }
 }
